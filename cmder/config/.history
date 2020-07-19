@@ -164,24 +164,26 @@ C:\django\envirt\Scripts\activate.bat
 manage.py dbshell
 npm install
 git commit -m "commit se configuro la base de datos db_djfull"
-npm start
 python manage.py migrate
 python manage.py
 python manage.py sqlmigrate admin 0001_initial
 python manage.py showmigrations
 python manage.py sqlmigrate auth 0001_initial
 python manage.py dbshell
-clear
 vim .gitignore
 cat .gitignore 
 python manage.py runserver
 git commit -m "commit se crearon las migraciones"
-git log
 C:\django\entvirt\Scripts\deactivate.bat 
-C:\django\entvirt\Scripts\activate.bat 
-git push -u origin master
 cd ..
-git status
 git init
 git commit -m "commit se crearon las migraciones y se configuro la plantilla sb-admin en bases"
+npm start
+git push -u origin master
+C:\django\entvirt\Scripts\activate.bat 
+git log
+clear
+python manage.py startapp bases
+git commit -m "commit se agrego la linea de firestore para solucionar el error"
+git status
 git add -A
