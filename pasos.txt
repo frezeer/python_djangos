@@ -1,0 +1,526 @@
+en windows abriendo con cmder
+
+cd C:\django                                #ruta donde creare el proyecto
+ 
+python -m venv entvirt                      #Generamos y entramos al entorno virtual                
+
+c:\django\entvirt\Scripts\activate.bat      #comando para activar el entorno virtual
+
+(entvirt)                                   #nos mostrara (envirt) al inicio de la ruta esto confirma que estamos en el entorno virtual
+
+code -r .				    #abre el visul code 	con el codigo de entorno activado
+
+c:\django\entvirt\Scripts\deactivate.bat    #comando para desactivar el entorno virtual
+
+
+C:\django\entvirt\Scripts\activate.bat
+
+
+pip install pylint			   #instalar libreria para visual code esto instalando antes python de microsft atravez de visual code
+
+
+
+pip install psycopg2 pip setuptools        #instala la libreria psycopg2
+
+
+pip show psycopg2			   #muestra caracteristicas del paquete
+
+
+pip install django==2.2                    #instala la version d django 2.2
+
+
+django-admin.exe startproject app          #crea el proyecto app
+
+
+ctrl + shift + p			   # seleccionar el interpret de python en visual code
+
+
+python manage.py dbshell		   # levantar servidor django una vez configurado con postgresql
+
+
+python manage.py runserver		   # levantar servidor por defecto corre en el puerto 8000
+
+
+python manage.py runserver 0.0.0.0:9000    # levantar servidor en el puerto 9000
+
+
+python manage.py migrate	           # preparar ORM para uso de base de datos crea tablas principales de django		
+
+
+python manage.py showmigrations		   # muestra las migraciones aplicadas 
+
+
+python manage.py sqlmigrate admin 0001_initial # muestra mas a detalle lo que hace con las migraciones
+
+
+
+
+https://www.toptal.com/developers/gitignore
+
+
+
+python dbshell
+
+
+db_djfull=# \dt
+                                        Listado de base de datos
+  Nombre   |  Due±o   | Codificaci¾n |       Collate       |        Ctype        |      Privilegios
+-----------+----------+--------------+---------------------+---------------------+-----------------------
+ db_djfull | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 |
+ postgres  | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 |
+ template0 | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 | =c/postgres          +
+           |          |              |                     |                     | postgres=CTc/postgres
+ template1 | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 | =c/postgres          +
+           |          |              |                     |                     | postgres=CTc/postgres
+(4 filas)
+
+
+db_djfull=# \dt
+                  Listado de relaciones
+ Esquema |           Nombre           | Tipo  |  Due±o
+---------+----------------------------+-------+----------
+ public  | auth_group                 | tabla | postgres
+ public  | auth_group_permissions     | tabla | postgres
+ public  | auth_permission            | tabla | postgres
+ public  | auth_user                  | tabla | postgres
+ public  | auth_user_groups           | tabla | postgres
+ public  | auth_user_user_permissions | tabla | postgres
+ public  | django_admin_log           | tabla | postgres
+ public  | django_content_type        | tabla | postgres
+ public  | django_migrations          | tabla | postgres
+ public  | django_session             | tabla | postgres
+(10 filas)
+
+
+db_djfull=#
+(entvirt) ? python manage.py showmigrations
+admin
+ [X] 0001_initial
+ [X] 0002_logentry_remove_auto_add
+ [X] 0003_logentry_add_action_flag_choices
+auth
+ [X] 0001_initial
+ [X] 0002_alter_permission_name_max_length
+ [X] 0003_alter_user_email_max_length
+ [X] 0004_alter_user_username_opts
+ [X] 0005_alter_user_last_login_null
+ [X] 0006_require_contenttypes_0002
+ [X] 0007_alter_validators_add_error_messages
+ [X] 0008_alter_user_username_max_length
+ [X] 0009_alter_user_last_name_max_length
+ [X] 0010_alter_group_name_max_length
+ [X] 0011_update_proxy_permissions
+contenttypes
+ [X] 0001_initial
+ [X] 0002_remove_content_type_name
+sessions
+ [X] 0001_initial
+
+(entvirt) ? python manage.py sqlmigrate admin 0001_initial
+BEGIN;
+--
+-- Create model LogEntry
+--
+CREATE TABLE "django_admin_log" ("id" serial NOT NULL PRIMARY KEY, "action_time" timestamp with time zone NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint NOT NULL CHECK ("action_flag" >= 0), "change_message" text NOT NULL, "content_type_id" integer NULL, "user_id" integer NOT NULL);
+ALTER TABLE "django_admin_log" ADD CONSTRAINT "django_admin_log_content_type_id_c4bce8eb_fk_django_co" FOREIGN KEY ("content_type_id") REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "django_admin_log" ADD CONSTRAINT "django_admin_log_user_id_c564eba6_fk_auth_user_id" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id");
+CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id");
+COMMIT;
+
+
+(entvirt) ? python manage.py sqlmigrate admin 0001_initial
+BEGIN;
+--
+-- Create model LogEntry
+--
+CREATE TABLE "django_admin_log" ("id" serial NOT NULL PRIMARY KEY, "action_time" timestamp with time zone NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint NOT NULL CHECK ("action_flag" >= 0), "change_message" text NOT NULL, "content_type_id" integer NULL, "user_id" integer NOT NULL);
+ALTER TABLE "django_admin_log" ADD CONSTRAINT "django_admin_log_content_type_id_c4bce8eb_fk_django_co" FOREIGN KEY ("content_type_id") REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "django_admin_log" ADD CONSTRAINT "django_admin_log_user_id_c564eba6_fk_auth_user_id" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id");
+CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id");
+COMMIT;
+
+C:\django\app (master -> origin) 
+(entvirt) ? python manage.py showmigrations
+admin
+ [X] 0001_initial
+ [X] 0002_logentry_remove_auto_add
+ [X] 0003_logentry_add_action_flag_choices
+auth
+ [X] 0001_initial
+ [X] 0002_alter_permission_name_max_length
+ [X] 0003_alter_user_email_max_length
+ [X] 0004_alter_user_username_opts
+ [X] 0005_alter_user_last_login_null
+ [X] 0006_require_contenttypes_0002
+ [X] 0007_alter_validators_add_error_messages
+ [X] 0008_alter_user_username_max_length
+ [X] 0009_alter_user_last_name_max_length
+ [X] 0010_alter_group_name_max_length
+ [X] 0011_update_proxy_permissions
+contenttypes
+ [X] 0001_initial
+ [X] 0002_remove_content_type_name
+sessions
+ [X] 0001_initial
+
+C:\django\app (master -> origin) 
+(entvirt) ? 
+C:\django\app (master -> origin) 
+(entvirt) ? python manage.py sqlmigrate auth 0001_initial
+BEGIN;
+--
+-- Create model Permission
+--
+CREATE TABLE "auth_permission" ("id" serial NOT NULL PRIMARY KEY, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL, "codename" varchar(100) NOT NULL);
+--
+-- Create model Group
+--
+CREATE TABLE "auth_group" ("id" serial NOT NULL PRIMARY KEY, "name" varchar(80) NOT NULL UNIQUE);
+CREATE TABLE "auth_group_permissions" ("id" serial NOT NULL PRIMARY KEY, "group_id" integer NOT NULL, "permission_id" integer NOT NULL);
+--
+-- Create model User
+--
+CREATE TABLE "auth_user" ("id" serial NOT NULL PRIMARY KEY, "password" varchar(128) NOT NULL, "last_login" timestamp with time zone NOT NULL, "is_superuser"
+boolean NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL,
+"is_staff" boolean NOT NULL, "is_active" boolean NOT NULL, "date_joined" timestamp with time zone NOT NULL);
+CREATE TABLE "auth_user_groups" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "group_id" integer NOT NULL);
+CREATE TABLE "auth_user_user_permissions" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "permission_id" integer NOT NULL);
+ALTER TABLE "auth_permission" ADD CONSTRAINT "auth_permission_content_type_id_2f476e4b_fk_django_co" FOREIGN KEY ("content_type_id") REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_permission" ADD CONSTRAINT "auth_permission_content_type_id_codename_01ab375a_uniq" UNIQUE ("content_type_id", "codename");
+CREATE INDEX "auth_permission_content_type_id_2f476e4b" ON "auth_permission" ("content_type_id");
+CREATE INDEX "auth_group_name_a6ea08ec_like" ON "auth_group" ("name" varchar_pattern_ops);
+ALTER TABLE "auth_group_permissions" ADD CONSTRAINT "auth_group_permissions_group_id_b120cbf9_fk_auth_group_id" FOREIGN KEY ("group_id") REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_group_permissions" ADD CONSTRAINT "auth_group_permissio_permission_id_84c5c92e_fk_auth_perm" FOREIGN KEY ("permission_id") REFERENCES "auth_permission" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_group_permissions" ADD CONSTRAINT "auth_group_permissions_group_id_permission_id_0cd325b0_uniq" UNIQUE ("group_id", "permission_id");
+CREATE INDEX "auth_group_permissions_group_id_b120cbf9" ON "auth_group_permissions" ("group_id");
+CREATE INDEX "auth_group_permissions_permission_id_84c5c92e" ON "auth_group_permissions" ("permission_id");
+CREATE INDEX "auth_user_username_6821ab7c_like" ON "auth_user" ("username" varchar_pattern_ops);
+ALTER TABLE "auth_user_groups" ADD CONSTRAINT "auth_user_groups_user_id_6a12ed8b_fk_auth_user_id" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_user_groups" ADD CONSTRAINT "auth_user_groups_group_id_97559544_fk_auth_group_id" FOREIGN KEY ("group_id") REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_user_groups" ADD CONSTRAINT "auth_user_groups_user_id_group_id_94350c0c_uniq" UNIQUE ("user_id", "group_id");
+CREATE INDEX "auth_user_groups_user_id_6a12ed8b" ON "auth_user_groups" ("user_id");
+CREATE INDEX "auth_user_groups_group_id_97559544" ON "auth_user_groups" ("group_id");
+ALTER TABLE "auth_user_user_permissions" ADD CONSTRAINT "auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_user_user_permissions" ADD CONSTRAINT "auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm" FOREIGN KEY ("permission_id") REFERENCES "auth_permission" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_user_user_permissions" ADD CONSTRAINT "auth_user_user_permissions_user_id_permission_id_14a6b632_uniq" UNIQUE ("user_id", "permission_id");
+CREATE INDEX "auth_user_user_permissions_user_id_a95ead1b" ON "auth_user_user_permissions" ("user_id");
+CREATE INDEX "auth_user_user_permissions_permission_id_1fbb5f2c" ON "auth_user_user_permissions" ("permission_id");
+COMMIT;
+
+
+
+pip list				   #lista paquetes instalados en este entorno	
+
+
+pip freezee > requirements.txt             #crea un archvio con paquetes instalados en ese entorno
+
+
+pip install requirements.txt               #instala todos los paquetes que contenga reuqirements.txt
+
+
+pip install package-name --upgrade --force-reinstall # para reinstalar paquetes 
+
+pip uninstall package-name                 #desisntala paquetes
+
+
+
+pip list --outdated                        #listar paquetes desactualizados
+
+Actualizar un paquete desactualizado:
+
+pip install package-name --upgrade
+
+-------------------------------------------------------------------------------------------------------
+
+C:\PostgreSQL\12\bin>psql -h localhost -U sergio -d postgres -W -p 5435
+
+psql -h localhost -U postgres -W -p 5435
+
+erika#$18
+
+l = listar
+
+drop database dpruebas;
+
+create database dbruebas with owner sergio;
+
+\q para salir del postgresql
+
+
+#para configuracion de installer windows
+C:\PostgreSQL\12\bin>createdb.exe -h localhost -p 5435 -O sergio -U sergio -e db_djfull
+
+
+
+#para configuracion de binarios
+
+createdb.exe -h localhost -p 5435 -O postgres -U postgres -e db_djfull
+
+psql -h localhost -U postgres -d db_djfull -W -p 5435
+
+--------------------------------------------------------------------------------------------------------
+
+
+ 
+
+
+
+pip install flask		            #instalar flask con python
+
+comprobar que flask esta trabajando
+
+
+C:\Proyectocore\python_web\venv\python3
+
+
+>>import flask
+>>
+
+#no debera mandar mensaje de error
+
+salimos con exit()
+
+
+#ls .
+
+#mkdir tutorial
+
+#cd tutorial\
+
+#atom .							#abrimos el direcorio con atom
+
+
+creamos el archivo main.py
+--------------------------------
+
+from flask import Flask
+
+app = Flask(__name__)
+
+if __name__ == '__main__':
+    app.run(debug=True, port=9000)    
+
+----------------------------------
+
+corremos con el comando 
+
+#python main.py
+
+entramos al url = http://localhost
+--------------------------------------------------------------------------------
+
+nuevo projecto
+
+mkdir project
+
+virtualenv env   
+
+C:\Proyectocore\python_web\project\env\Scripts\activate.bat
+
+(env) C:\Proyectocore\python_web\project
+
+pip install Flask
+
+pip install Flask-script
+
+https://j2logo.com/virtualenv-pip-librerias-python/
+
+#python 
+
+>>> import flask_script
+>>> exit()
+
+
+pip install Flask-Bootstrap4
+
+pip install WTForms
+
+pip install Flask-WTF
+
+pip install Flask-SQLAlchemy
+
+
+
+
+en linux:
+instala pip
+sudo apt install python-pip
+sudo pip install virtualenv
+
+
+Hola danielesparza94, si bien puedes tomar el curso con la versión 2.7,
+
+ lo mejor sería que ya no lo hicieras, 
+
+y que a partir de este momento todos tus proyectos fueran con la versión 3.x ya que la versión 2 de Python ya no posee soporte alguno. 
+Esto entro en vigencia el primero de enero del 2020.
+
+
+ Tiene un par de meses, así que es mejor actualizar a la versión 3.
+
+HOLA A TODOS LES TENGO LA SOLUCIÓN QUE AQUÍ NI LA DAN.
+
+
+https://www.pythoniza.me/instalando-mysqlclient-en-windows/
+
+https://www.pythoniza.me/tips-bootstrap-parte-1/
+
+
+mysql en django
+
+
+https://www.youtube.com/watch?v=8gSjvehTqAk
+
+---------------------------------------------------------------------------------------------------------------
+
+
+Para los usuarios de Windows, voy a compartir mi manera de solucionarlo. 
+Soy usuario de XAMPP. Para crear la base de datos active Apache + MySQL, fui al administrador de MySQL (phpMyAdmin), 
+cree mi base de datos "project_web_facilito" y luego agregue la ruta en config.py de la siguiente forma:
+
+    userpass = 'mysql://root:@'
+    basedir = '127.0.0.1'
+    dbname = '/project_web_facilito'
+    
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = userpass + basedir + dbname
+
+	Luego para instalar el mysqlclient se hace a través de binario (.whl) como lo indica
+
+
+	 pip3 install mysqlclient
+
+------------------------------------------------------------------------------------------------------------------ 
+
+https://www.youtube.com/watch?v=LhsGA9PJtG0
+
+https://www.youtube.com/watch?v=Btlnfhh-Gac
+
+
+python en windows y mac ox
+
+https://www.youtube.com/watch?v=S8V8lgp48Rg
+
+
+
+
+Instalar paquetes wheel 
+
+https://www.youtube.com/watch?v=MzV4N4XUvYc
+
+llenen una variable de esta forma:
+
+DB_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
+    username = "tu_username",
+    password = "tu_password.",
+    hostname = "localhost",
+    databasename = "tu_db"
+)
+
+luego solo la llaman asi:
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = DB_URI
+    pass
+
+luelo para que todo funcione bien instalen esto:
+
+pip install mysql-connector-python
+
+agreguen esto a la configuracion:
+
+SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
+
+
+DE NADA Y SIGAN APRENDIENDO...
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Chicos de windows, no se desesperen, les tengo la solución para los que les da error en pip install mysqlclient, es muy sencillo, 
+sólo presten atención a estos pasos muy fáciles. 
+Para los que tengan arquitectura de 64 bits (sino saben de que hablo busquen en google como "¿Qué arquitectura es mi PC/lap?") 
+vayan a esta dirección 
+
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient y descarguen este archivo,  mysqlclient-1.4.5-cp38-cp38-win32.whl, 
+
+yo descargué cp38 porque tengo python 3.8, si tienes python 3.7 descarga el cp37 de hecho les APARECERÁN dos 
+
+archivos con casi el mismo nombre sólo que el otro dice win64.whl, bajen el de 32, pueden probar descargando el de 64 pero les dará problemas y ya en terminal, 
+
+este paso es IMPORTANTE  coloquen el archivo a la altura de su carpeta env o el nombre que le hayan puesto a su entrono viertual y ejecuten
+
+pip install mysqlclient-1.4.5-cp38-cp38-win32.whl 
+
+A mi me generaba un problema con el enviroment, me funciono fue poniendolo en una carpeta fuera del enviroment (en mi caso en el directorio raíz d:) y ejecute el comando de la siguiente manera:
+
+pip install d:\mysqlclient-1.4.6-cp38-cp38-win32.whl
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Instalacion en 2.7 que jalo
+https://blog.robertabel.eu/2018/01/21/compiling-mysqlclient-for-python-2-7-on-windows-7-and-up/
+
+There is a much simpler way for python 2.7.
+Go to: https://github.com/PyMySQL/mysqlclient-python/issues/54
+Search for the post by user “methane” Oct 2, 2016. methane is the author of the wheels for python 2.7. 
+The link to the files is given in his post. 
+Download the file corresponding to your OS and install:
+> pip install mysqlclient-1.3.9-cp27-cp27m-win32.whl
+
+https://github.com/PyMySQL/mysqlclient-python/issues/54
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Instalacion en 2.7 que jalo
+
+https://github.com/PyMySQL/mysqlclient-python/issues/54
+
+https://github.com/PyMySQL/mysqlclient-python/releases/tag/1.3.8
+
+
+pip install -U pip setuptools wheel 
+
+pip install C:\Users\sistemas\Downloads\mysqlclient-1.3.9-cp27-cp27m-win_amd64.whl
+
+
+C:\Proyectocore\python_web\project
+(env) ? pip freeze
+DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. pip 21.0 will drop support for Python 2.7 in January 2021. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+click==7.1.2
+dominate==2.5.1
+Flask==1.1.2
+Flask-Bootstrap4==4.0.2
+Flask-Script==2.0.6
+Flask-SQLAlchemy==2.4.3
+Flask-WTF==0.14.3
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+mysql-connector-python==8.0.20
+mysqlclient @ file:///C:/Users/sistemas/Downloads/mysqlclient-1.3.9-cp27-cp27m-win_amd64.whl
+protobuf==3.12.2
+six==1.15.0
+SQLAlchemy==1.3.18
+visitor==0.1.3
+Werkzeug==1.0.1
+WTForms==2.3.1
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Instaldo flask mysql
+ejemplos
+
+https://www.youtube.com/watch?v=h5dM9K_EKVw
+
+
+https://www.youtube.com/watch?v=IgCfZkR8wME
+
+
+Python Flask y Mysql Aplicación Web | Aplicación de Ejemplo
+
+
+https://github.com/PyMySQL/mysqlclient-python
+
+

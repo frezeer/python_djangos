@@ -1,0 +1,276 @@
+en windows abriendo con cmder
+
+cd C:\django                                #ruta donde creare el proyecto
+ 
+python -m venv entvirt                      #Generamos y entramos al entorno virtual                
+
+c:\django\entvirt\Scripts\activate.bat      #comando para activar el entorno virtual
+
+(entvirt)                                   #nos mostrara (envirt) al inicio de la ruta esto confirma que estamos en el entorno virtual
+
+code -r .				    #abre el visul code 	con el codigo de entorno activado
+
+c:\django\entvirt\Scripts\deactivate.bat    #comando para desactivar el entorno virtual
+
+
+C:\django\entvirt\Scripts\activate.bat
+
+
+pip install pylint			   #instalar libreria para visual code esto instalando antes python de microsft atravez de visual code
+
+
+
+pip install psycopg2 pip setuptools        #instala la libreria psycopg2 que es el driver para posqtgresql
+
+
+pip show psycopg2			   #muestra caracteristicas del paquete 
+
+
+pip install django==2.2                    #instala la version d django 2.2
+
+
+django-admin.exe startproject app          #crea el proyecto app
+
+
+ctrl + shift + p			   # seleccionar el interpret de python en visual code
+
+
+python manage.py dbshell		   # levantar servidor django una vez configurado con postgresql
+
+
+python manage.py runserver		   # levantar servidor por defecto corre en el puerto 8000
+
+
+python manage.py runserver 0.0.0.0:9000    # levantar servidor en el puerto 9000
+
+
+python manage.py migrate	           # preparar ORM para uso de base de datos crea tablas principales de django		
+
+
+python manage.py showmigrations		   # muestra las migraciones aplicadas 
+
+
+python manage.py sqlmigrate admin 0001_initial # muestra mas a detalle lo que hace con las migraciones
+
+
+python manage.py startapp                 # crea aplicaciones en proyecto django
+
+
+python manage.py startapp bases		  # crea aplicacion base contendra archivos de login logout y modelos 
+
+
+
+https://www.toptal.com/developers/gitignore
+
+
+
+python dbshell
+
+
+db_djfull=# \dt
+                                        Listado de base de datos
+  Nombre   |  Due±o   | Codificaci¾n |       Collate       |        Ctype        |      Privilegios
+-----------+----------+--------------+---------------------+---------------------+-----------------------
+ db_djfull | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 |
+ postgres  | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 |
+ template0 | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 | =c/postgres          +
+           |          |              |                     |                     | postgres=CTc/postgres
+ template1 | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 | =c/postgres          +
+           |          |              |                     |                     | postgres=CTc/postgres
+(4 filas)
+
+
+db_djfull=# \dt
+                  Listado de relaciones
+ Esquema |           Nombre           | Tipo  |  Due±o
+---------+----------------------------+-------+----------
+ public  | auth_group                 | tabla | postgres
+ public  | auth_group_permissions     | tabla | postgres
+ public  | auth_permission            | tabla | postgres
+ public  | auth_user                  | tabla | postgres
+ public  | auth_user_groups           | tabla | postgres
+ public  | auth_user_user_permissions | tabla | postgres
+ public  | django_admin_log           | tabla | postgres
+ public  | django_content_type        | tabla | postgres
+ public  | django_migrations          | tabla | postgres
+ public  | django_session             | tabla | postgres
+(10 filas)
+
+
+db_djfull=#
+(entvirt) ? python manage.py showmigrations
+admin
+ [X] 0001_initial
+ [X] 0002_logentry_remove_auto_add
+ [X] 0003_logentry_add_action_flag_choices
+auth
+ [X] 0001_initial
+ [X] 0002_alter_permission_name_max_length
+ [X] 0003_alter_user_email_max_length
+ [X] 0004_alter_user_username_opts
+ [X] 0005_alter_user_last_login_null
+ [X] 0006_require_contenttypes_0002
+ [X] 0007_alter_validators_add_error_messages
+ [X] 0008_alter_user_username_max_length
+ [X] 0009_alter_user_last_name_max_length
+ [X] 0010_alter_group_name_max_length
+ [X] 0011_update_proxy_permissions
+contenttypes
+ [X] 0001_initial
+ [X] 0002_remove_content_type_name
+sessions
+ [X] 0001_initial
+
+(entvirt) ? python manage.py sqlmigrate admin 0001_initial
+BEGIN;
+--
+-- Create model LogEntry
+--
+CREATE TABLE "django_admin_log" ("id" serial NOT NULL PRIMARY KEY, "action_time" timestamp with time zone NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint NOT NULL CHECK ("action_flag" >= 0), "change_message" text NOT NULL, "content_type_id" integer NULL, "user_id" integer NOT NULL);
+ALTER TABLE "django_admin_log" ADD CONSTRAINT "django_admin_log_content_type_id_c4bce8eb_fk_django_co" FOREIGN KEY ("content_type_id") REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "django_admin_log" ADD CONSTRAINT "django_admin_log_user_id_c564eba6_fk_auth_user_id" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id");
+CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id");
+COMMIT;
+
+
+(entvirt) ? python manage.py sqlmigrate admin 0001_initial
+BEGIN;
+--
+-- Create model LogEntry
+--
+CREATE TABLE "django_admin_log" ("id" serial NOT NULL PRIMARY KEY, "action_time" timestamp with time zone NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint NOT NULL CHECK ("action_flag" >= 0), "change_message" text NOT NULL, "content_type_id" integer NULL, "user_id" integer NOT NULL);
+ALTER TABLE "django_admin_log" ADD CONSTRAINT "django_admin_log_content_type_id_c4bce8eb_fk_django_co" FOREIGN KEY ("content_type_id") REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "django_admin_log" ADD CONSTRAINT "django_admin_log_user_id_c564eba6_fk_auth_user_id" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id");
+CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id");
+COMMIT;
+
+C:\django\app (master -> origin) 
+(entvirt) ? python manage.py showmigrations
+admin
+ [X] 0001_initial
+ [X] 0002_logentry_remove_auto_add
+ [X] 0003_logentry_add_action_flag_choices
+auth
+ [X] 0001_initial
+ [X] 0002_alter_permission_name_max_length
+ [X] 0003_alter_user_email_max_length
+ [X] 0004_alter_user_username_opts
+ [X] 0005_alter_user_last_login_null
+ [X] 0006_require_contenttypes_0002
+ [X] 0007_alter_validators_add_error_messages
+ [X] 0008_alter_user_username_max_length
+ [X] 0009_alter_user_last_name_max_length
+ [X] 0010_alter_group_name_max_length
+ [X] 0011_update_proxy_permissions
+contenttypes
+ [X] 0001_initial
+ [X] 0002_remove_content_type_name
+sessions
+ [X] 0001_initial
+
+C:\django\app (master -> origin) 
+(entvirt) ? 
+C:\django\app (master -> origin) 
+(entvirt) ? python manage.py sqlmigrate auth 0001_initial
+BEGIN;
+--
+-- Create model Permission
+--
+CREATE TABLE "auth_permission" ("id" serial NOT NULL PRIMARY KEY, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL, "codename" varchar(100) NOT NULL);
+--
+-- Create model Group
+--
+CREATE TABLE "auth_group" ("id" serial NOT NULL PRIMARY KEY, "name" varchar(80) NOT NULL UNIQUE);
+CREATE TABLE "auth_group_permissions" ("id" serial NOT NULL PRIMARY KEY, "group_id" integer NOT NULL, "permission_id" integer NOT NULL);
+--
+-- Create model User
+--
+CREATE TABLE "auth_user" ("id" serial NOT NULL PRIMARY KEY, "password" varchar(128) NOT NULL, "last_login" timestamp with time zone NOT NULL, "is_superuser"
+boolean NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL,
+"is_staff" boolean NOT NULL, "is_active" boolean NOT NULL, "date_joined" timestamp with time zone NOT NULL);
+CREATE TABLE "auth_user_groups" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "group_id" integer NOT NULL);
+CREATE TABLE "auth_user_user_permissions" ("id" serial NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "permission_id" integer NOT NULL);
+ALTER TABLE "auth_permission" ADD CONSTRAINT "auth_permission_content_type_id_2f476e4b_fk_django_co" FOREIGN KEY ("content_type_id") REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_permission" ADD CONSTRAINT "auth_permission_content_type_id_codename_01ab375a_uniq" UNIQUE ("content_type_id", "codename");
+CREATE INDEX "auth_permission_content_type_id_2f476e4b" ON "auth_permission" ("content_type_id");
+CREATE INDEX "auth_group_name_a6ea08ec_like" ON "auth_group" ("name" varchar_pattern_ops);
+ALTER TABLE "auth_group_permissions" ADD CONSTRAINT "auth_group_permissions_group_id_b120cbf9_fk_auth_group_id" FOREIGN KEY ("group_id") REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_group_permissions" ADD CONSTRAINT "auth_group_permissio_permission_id_84c5c92e_fk_auth_perm" FOREIGN KEY ("permission_id") REFERENCES "auth_permission" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_group_permissions" ADD CONSTRAINT "auth_group_permissions_group_id_permission_id_0cd325b0_uniq" UNIQUE ("group_id", "permission_id");
+CREATE INDEX "auth_group_permissions_group_id_b120cbf9" ON "auth_group_permissions" ("group_id");
+CREATE INDEX "auth_group_permissions_permission_id_84c5c92e" ON "auth_group_permissions" ("permission_id");
+CREATE INDEX "auth_user_username_6821ab7c_like" ON "auth_user" ("username" varchar_pattern_ops);
+ALTER TABLE "auth_user_groups" ADD CONSTRAINT "auth_user_groups_user_id_6a12ed8b_fk_auth_user_id" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_user_groups" ADD CONSTRAINT "auth_user_groups_group_id_97559544_fk_auth_group_id" FOREIGN KEY ("group_id") REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_user_groups" ADD CONSTRAINT "auth_user_groups_user_id_group_id_94350c0c_uniq" UNIQUE ("user_id", "group_id");
+CREATE INDEX "auth_user_groups_user_id_6a12ed8b" ON "auth_user_groups" ("user_id");
+CREATE INDEX "auth_user_groups_group_id_97559544" ON "auth_user_groups" ("group_id");
+ALTER TABLE "auth_user_user_permissions" ADD CONSTRAINT "auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id" FOREIGN KEY ("user_id") REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_user_user_permissions" ADD CONSTRAINT "auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm" FOREIGN KEY ("permission_id") REFERENCES "auth_permission" ("id") DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "auth_user_user_permissions" ADD CONSTRAINT "auth_user_user_permissions_user_id_permission_id_14a6b632_uniq" UNIQUE ("user_id", "permission_id");
+CREATE INDEX "auth_user_user_permissions_user_id_a95ead1b" ON "auth_user_user_permissions" ("user_id");
+CREATE INDEX "auth_user_user_permissions_permission_id_1fbb5f2c" ON "auth_user_user_permissions" ("permission_id");
+COMMIT;
+
+
+
+pip list				   #lista paquetes instalados en este entorno	
+
+
+pip freezee > requirements.txt             #crea un archvio con paquetes instalados en ese entorno
+
+
+pip install requirements.txt               #instala todos los paquetes que contenga reuqirements.txt
+
+
+pip install package-name --upgrade --force-reinstall # para reinstalar paquetes 
+
+pip uninstall package-name                 #desisntala paquetes
+
+
+
+pip list --outdated                        #listar paquetes desactualizados
+
+Actualizar un paquete desactualizado:
+
+pip install package-name --upgrade
+
+-------------------------------------------------------------------------------------------------------
+
+C:\PostgreSQL\12\bin>psql -h localhost -U sergio -d postgres -W -p 5435
+
+psql -h localhost -U postgres -W -p 5435
+
+erika#$18
+
+l = listar
+
+drop database dpruebas;
+
+create database dbruebas with owner sergio;
+
+\q para salir del postgresql
+
+
+#para configuracion de installer windows
+
+C:\PostgreSQL\12\bin>createdb.exe -h localhost -p 5435 -O sergio -U sergio -e db_djfull
+
+
+
+#para configuracion de binarios
+
+createdb.exe -h localhost -p 5435 -O postgres -U postgres -e db_djfull
+
+psql -h localhost -U postgres -d db_djfull -W -p 5435
+
+--------------------------------------------------------------------------------------------------------
+
+
+ 
+
+
+
+
