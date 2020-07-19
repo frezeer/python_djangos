@@ -150,8 +150,6 @@ pip install django==2.2
 django-admin.exe startproject app
 code -r .
 manage.py
-dir
-cd app
 ls
 pip freeze
 manage.py 
@@ -160,7 +158,6 @@ C:\django\envirt\Scripts\deactivate.bat
 psql -h localhost -U sergio -d postgres -W -p 5435
 psql -h localhost -U sergio -d db_djfull -W -p 5435
 psql
-C:\django\envirt\Scripts\activate.bat 
 manage.py dbshell
 npm install
 git commit -m "commit se configuro la base de datos db_djfull"
@@ -169,21 +166,36 @@ python manage.py
 python manage.py sqlmigrate admin 0001_initial
 python manage.py showmigrations
 python manage.py sqlmigrate auth 0001_initial
-python manage.py dbshell
 vim .gitignore
 cat .gitignore 
-python manage.py runserver
 git commit -m "commit se crearon las migraciones"
 C:\django\entvirt\Scripts\deactivate.bat 
-cd ..
 git init
 git commit -m "commit se crearon las migraciones y se configuro la plantilla sb-admin en bases"
 npm start
-git push -u origin master
 C:\django\entvirt\Scripts\activate.bat 
-git log
-clear
 python manage.py startapp bases
 git commit -m "commit se agrego la linea de firestore para solucionar el error"
+git commit -m "se anexan los modelos de las bases"
+git remote add https://github.com/frezeer/python_djangos.git
+git remote add origin https://github.com/frezeer/python_djangos.git
+git remote -v
+git log
+git push -u origin master
+CLEAR
 git status
+python manage.py dbshell
+C:\django\envirt\Scripts\activate.bat 
+C:\django\envirt\Scripts\activate.bat
+cd django\entvirt\Scripts\activate.bat
+cd django\entvirt\Scripts
+activate.bat
+cd django\
+cd app\
+cd app
+cd ..
+dir
+python manage.py runserver
+clear
+git commit -m "Errores al correr el servidor no importa las librerias"
 git add -A
