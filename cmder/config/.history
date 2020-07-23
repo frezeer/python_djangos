@@ -223,7 +223,6 @@ python manage.py
 python manage.py start
 cd django\entvirt\Scripts\a
 git commit -m "correccion de rutas de base ya trabaja"
-git push -u origin master
 cd .
 git commit -m "correccion de rutas de static ya funciona"
 python manage.py createsuperuser
@@ -232,10 +231,12 @@ activate.bat
 dir
 python manage.py dbshell
 cd app
-cd ..
 ls
-git log
-python manage.py runserver
+git commit -m "trabajando esta parte esta en login"
+git push -u origin master
 clear
+python manage.py runserver
+git log
+cd ..
 git status
 git add -A
