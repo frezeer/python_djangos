@@ -19,10 +19,7 @@ cd python\
 mkdir django
 source c:\django\cmder\C:\django\cmder\entvirt\Scripts\activate.bat
 c:\django\cmder\C:\django\cmder\entvirt\Scripts\activate.bat
-cd entvirt\
 ld
-cd Scripts\
-activate.bat 
 cd Users\
 cd sistemas\
 cd C:\Proyectocore\python_web 
@@ -104,7 +101,6 @@ npm install -g gatsby-cli
 gatsby -v
 cd C:\Proyectocore\python_web\project 
 C:\Proyectocore\python_web\project\env\Scripts\activate.bat 
-python manager.py runserver
 python manage.py db migrate
 python manage.py db upgrade
 python -m venv entvirt
@@ -135,7 +131,6 @@ git commit -m "actualizo librerias y omito configuracion de firebase"
 git push -u origin master 
 git commit -m "actualizo librerias y omito server"
 git remote -v 
-git commit -m "first commit"
 git add node_modules\
 git s
 git status --ignored
@@ -150,16 +145,13 @@ pip install django==2.2
 django-admin.exe startproject app
 code -r .
 manage.py
-ls
 pip freeze
 manage.py 
-python manage.py 
 C:\django\envirt\Scripts\deactivate.bat 
 psql -h localhost -U sergio -d postgres -W -p 5435
 psql -h localhost -U sergio -d db_djfull -W -p 5435
 psql
 manage.py dbshell
-npm install
 git commit -m "commit se configuro la base de datos db_djfull"
 python manage.py migrate
 python manage.py
@@ -170,32 +162,76 @@ vim .gitignore
 cat .gitignore 
 git commit -m "commit se crearon las migraciones"
 C:\django\entvirt\Scripts\deactivate.bat 
-git init
 git commit -m "commit se crearon las migraciones y se configuro la plantilla sb-admin en bases"
-npm start
 C:\django\entvirt\Scripts\activate.bat 
 python manage.py startapp bases
 git commit -m "commit se agrego la linea de firestore para solucionar el error"
 git commit -m "se anexan los modelos de las bases"
 git remote add https://github.com/frezeer/python_djangos.git
 git remote add origin https://github.com/frezeer/python_djangos.git
-git remote -v
-git log
-git push -u origin master
 CLEAR
-git status
 python manage.py dbshell
 C:\django\envirt\Scripts\activate.bat 
 C:\django\envirt\Scripts\activate.bat
-cd django\entvirt\Scripts\activate.bat
 cd django\entvirt\Scripts
 activate.bat
 cd django\
 cd app\
-cd app
-cd ..
+git commit -m "Errores al correr el servidor no importa las librerias"
+git commit -m "Terminado configuracion de context video 29 y 30"
+git logs
+git remote -v
+git log --online --decorate --all --graph
+git log --oneline --decorate --all --graph
+npm install recompose
+cd django\entvirt\Scripts\activate.bat
+app
+git commit -m "Instalacion de Libreria recompose npm install recompose"
+npm innstall
+git rm src/server/firebase.js
+git pull
+git commit -m "se exporto la libreria recompose  en regitrar usuarios"
+git commit -m "se integra el file firebase.js"
+git commit -m "en este momento ya funciona el alta de los usuario"
+git add src/componenentes/seguridad/Login.js
+git add src/App.js
+git commit -m "Se Agrega el Componente Login"
+npm stary
+git commit -m "Se hacen camnios importantes en login ya funciona y se habilita el registro para usuarios en BD firebase"
+git commit -m "Se hacen cambios para el useContext"
+git commit -m "video Hooks 45"
+cdir
+c:/django/entvirt/Scripts/activate.bat
+git remote add origin https://github.com/frezeer/app_django.git
+git commit -m "Archivos Reducer Actualizados hasta openMensaje"
+php artisan serve
+npm install
+git init
+git commit -m "first commit"
+git remote add origin https://github.com/frezeer/app_shop.git
+npm run dev
+npm install --save firebase firebase/firestore
+git log
+git commit -m "Archivos Reducer y error corregido de nuevo User la faltaba el action."
+git push -u origin master
+npm start
+cd Scripts
+cd django 
+ls
+cd entvirt\
+cd Scripts\
+activate
+python manager.py runserver
+python manage.py runserve
+python manage.py 
+python manage.py start
+clear
+cd django\entvirt\Scripts\a
 dir
 python manage.py runserver
-clear
-git commit -m "Errores al correr el servidor no importa las librerias"
+cd django\entvirt\Scripts\
+activate.bat 
+cd ..
+cd app
+git status
 git add -A
