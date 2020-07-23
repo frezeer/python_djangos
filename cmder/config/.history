@@ -170,7 +170,6 @@ git commit -m "se anexan los modelos de las bases"
 git remote add https://github.com/frezeer/python_djangos.git
 git remote add origin https://github.com/frezeer/python_djangos.git
 CLEAR
-python manage.py dbshell
 C:\django\envirt\Scripts\activate.bat 
 C:\django\envirt\Scripts\activate.bat
 cd django\entvirt\Scripts
@@ -211,12 +210,10 @@ git commit -m "first commit"
 git remote add origin https://github.com/frezeer/app_shop.git
 npm run dev
 npm install --save firebase firebase/firestore
-git log
 git commit -m "Archivos Reducer y error corregido de nuevo User la faltaba el action."
 npm start
 cd Scripts
 cd django 
-ls
 cd entvirt\
 cd Scripts\
 activate
@@ -224,16 +221,21 @@ python manager.py runserver
 python manage.py runserve
 python manage.py 
 python manage.py start
-clear
 cd django\entvirt\Scripts\a
-dir
 git commit -m "correccion de rutas de base ya trabaja"
 git push -u origin master
+cd .
+git commit -m "correccion de rutas de static ya funciona"
+python manage.py createsuperuser
 cd django\entvirt\Scripts\
 activate.bat 
-cd .
-cd ..
+dir
+python manage.py dbshell
 cd app
+cd ..
+ls
+git log
 python manage.py runserver
+clear
 git status
 git add -A

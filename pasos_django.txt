@@ -60,7 +60,11 @@ python manage.py startapp bases		  # crea aplicacion base contendra archivos de 
 
 
 
-https://www.toptal.com/developers/gitignore
+https://www.toptal.com/developers/gitignore  #se creo usuario admin pass erika#$18
+
+
+
+python manage.py createsuperuser          #crea el usuario administrador del proyecto http://localhost:8000/admin
 
 
 
