@@ -213,7 +213,6 @@ npm run dev
 npm install --save firebase firebase/firestore
 git log
 git commit -m "Archivos Reducer y error corregido de nuevo User la faltaba el action."
-git push -u origin master
 npm start
 cd Scripts
 cd django 
@@ -228,10 +227,13 @@ python manage.py start
 clear
 cd django\entvirt\Scripts\a
 dir
-python manage.py runserver
+git commit -m "correccion de rutas de base ya trabaja"
+git push -u origin master
 cd django\entvirt\Scripts\
 activate.bat 
+cd .
 cd ..
 cd app
+python manage.py runserver
 git status
 git add -A
