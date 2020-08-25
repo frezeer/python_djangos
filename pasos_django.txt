@@ -16,6 +16,9 @@ c:\django\entvirt\Scripts\deactivate.bat    #comando para desactivar el entorno 
 C:\django\entvirt\Scripts\activate.bat
 
 
+C:\PostgreSQL\12\binarios\servicios.bat    #iniciar postgresql
+
+
 pip install pylint			   #instalar libreria para visual code esto instalando antes python de microsft atravez de visual code
 
 

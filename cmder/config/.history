@@ -12,7 +12,6 @@ pyhon -m venv entvirt
 source c:\django\cmder\C:\django\cmder\entvirt\Scripts\
 ls entvirt\Scripts\activate.bat
 source C:\django\cmder\entvirt\Scripts\activate.bat
-ls 
 ls entvirt\Scripts\activate.bat 
 mkdir python
 cd python\
@@ -20,8 +19,6 @@ mkdir django
 source c:\django\cmder\C:\django\cmder\entvirt\Scripts\activate.bat
 c:\django\cmder\C:\django\cmder\entvirt\Scripts\activate.bat
 ld
-cd Users\
-cd sistemas\
 cd C:\Proyectocore\python_web 
 di
 python -m env entvirt 
@@ -96,7 +93,6 @@ ls envirt
 ls entvirt
 ls entvirt\Scripts\
 git remote add origin https://github.com/frezeer/Python_django.git
-git config --global user.name "frezeer"
 git config --global user.email frezee13@hotmail.com 
 git config --global color.ui true 
 pip install pyscopg2
@@ -105,7 +101,6 @@ pip search psycopg2
 pip show psycopg2
 pip frezee
 c:\django\entvirt\Scripts\deactivate.bat 
-git config --global --list
 c:\django\entvirt\Scripts\activate.bat
 pip uninstall pyscopg2
 pip uninstall psycopg2
@@ -116,7 +111,6 @@ git commit -m "se instala libreria con npm install firebase"
 git commit "software y binarios postgresql"
 git commit -m "software y binarios postgresl"
 git commit -m "actualizo librerias y omito configuracion de firebase"
-git push -u origin master 
 git commit -m "actualizo librerias y omito server"
 git remote -v 
 git add node_modules\
@@ -155,16 +149,12 @@ git commit -m "commit se agrego la linea de firestore para solucionar el error"
 git commit -m "se anexan los modelos de las bases"
 git remote add https://github.com/frezeer/python_djangos.git
 git remote add origin https://github.com/frezeer/python_djangos.git
-CLEAR
 C:\django\envirt\Scripts\activate.bat 
 C:\django\envirt\Scripts\activate.bat
 cd django\entvirt\Scripts
 cd django\
-cd app\
 git commit -m "Errores al correr el servidor no importa las librerias"
 git commit -m "Terminado configuracion de context video 29 y 30"
-git logs
-git remote -v
 git log --online --decorate --all --graph
 git log --oneline --decorate --all --graph
 npm install recompose
@@ -188,31 +178,21 @@ cdir
 c:/django/entvirt/Scripts/activate.bat
 git remote add origin https://github.com/frezeer/app_django.git
 git commit -m "Archivos Reducer Actualizados hasta openMensaje"
-php artisan serve
-npm install
-git init
-git commit -m "first commit"
 git remote add origin https://github.com/frezeer/app_shop.git
-npm run dev
 npm install --save firebase firebase/firestore
 git commit -m "Archivos Reducer y error corregido de nuevo User la faltaba el action."
 cd Scripts
 cd django 
-cd entvirt\
-cd Scripts\
 python manager.py runserver
 python manage.py 
 python manage.py start
 cd django\entvirt\Scripts\a
 git commit -m "correccion de rutas de base ya trabaja"
-cd .
 git commit -m "correccion de rutas de static ya funciona"
 python manage.py createsuperuser
 cd django\entvirt\Scripts\
 python manage.py dbshell
-ls
 git commit -m "trabajando esta parte esta en login"
-git log
 git commit -m "login trabajando y con mensaes de error cap 50"
 virtual venv
 activate.bat
@@ -250,18 +230,349 @@ python manage.py runserve
 git Add -A
 git commit -m "Agregar Logica al componente RegistrarUusario"
 python manage.pygit push -u origin master
-npm start
 git commit -m "Agregar Logica al componente RegistrarUsario y Login"
-git push -u origin master
-cd entvirt\Scripts\
-activate.bat 
-cd ..
 pip freeze
 pip freeze > requirements.txt
-cd app
-dir
 python manage runserver
-python manage.py runserver
+git commit -m "Template login con detalles"
+cd entvirt\Scripts\
+git push -u origin master 
+commit -m "Iniciando Aplicacion"
+git commit -m "Iniciando Aplicacion"
+ cd app
+../../bin/webpack-dev-server
+../bin/webpack-dev-server
+../app/bin/webpack-dev-server
+cd app\bin
+cd bin\
+./bin/webpack-dev-server
+bin
+cd bin
+./webpack-dev-server
+webpack-dev-server
+rubi .\bin\webpack-dev-server 
+.\bin\webpack-dev-server 
+npm i --save-dev bootstrap@next bootstrap-loader tether jquery popper
+yarn install --check-files
+yarn add  popper.js
+rails generate model Article title:string status:integer
+git commit -m "Generando  Tabla Articles"
+rails generate model Aritcles title:string status:integer
+rails generate model Articles title:string status:integer
+rails generate model Aritcle title:string status:integer
+rails generate controller Article
+bundle exec rails webpacker:install
+yarn add bootstrap, jquery, popper.js
+rail server
+rails generate controller Home index
+git remote add origin https://github.com/frezeer/RubyRails.git
+ruby .\bin\webpack-dev-server 
+yarn -v
+npm install --save resolve-url-loader --dev
+npm i --save-dev bootstrap@next bootstrap-loader tether jquery
+yarn add jquery, popper.js
+yarn popper.js
+yarn add popper.js
+git commit -m "se instlan dependencias jquery y popper.js"
+rails generate model Articles title:string status:integer 
+rails generate controller Articles
+git commit -m "se crea articles y funciona"
+rails action_text:install
+git commit -m "Sistema de Articulos trabajando correctamente"
+git commit -m "Se Arreglo el path de Inicio"
+git commit -m "Se Componen los parciales y se limpia codigo repetido con el before action"
+rails routes
+rails generate devise:install
+rails generate devise  User
+git commit -m "Se instala y se hace migration de User"
+git commit -m "Se configura link de cerrar session"
+rails generate devise:views
+git commit -m "Se generan los views de devise"
+git commit -m "Se reescibe los mensajes de ingles a español"
+rails generate migration add_user_id_to_articles user:references
+git commit -m "Se reescribe articles con parametros fuertes y se hacen pruebas"
+rails generate scaffold Category title color
+git commit -m "Se crea scaffold de Category"
+rails console
+rails generate model HasCategory article:references category:references
+rails db:migrate
+git commit -m "Se crea scaffold de Category se da formato a los links de categoria"
+C:\Proyectocore\python_web (master -> origin)
+(venv) λ pip freeze
+DEPRECATION: Python 2.7 reached the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 is no longer maintained. pip 21.0 will drop support for Python 2.7 in January 2021. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+alembic==1.4.2
+blinker==1.4
+click==7.1.2
+dominate==2.5.1
+Flask==1.1.2
+Flask-Bootstrap4==4.0.2
+Flask-Login==0.5.0
+Flask-Mail==0.9.1
+Flask-Migrate==2.5.3
+Flask-Script==2.0.6
+Flask-SQLAlchemy==2.4.4
+Flask-WTF==0.14.3
+cd C:\Users\sistemas\Documents\backend 
+node server.js 
+npm install express
+dir 
+node express.js 
+node express.js npm install body-parser
+npm install body-parser
+npm install ejs
+npm install pug --save
+node express.js
+rails -v
+rails new ecommerce
+cd ecommerce\
+rails g devise:install
+rails generate controller welcome index
+rails generate User
+rails generate devise User
+rake db:migrate
+"bunlde install
+rails g haml-rails:install
+rails sruby .\bin\webpack-dev-server
+ruby .\bin\webpack-dev-server
+gem install haml
+yarn add bootstrap
+gem install haml-rails
+gem uninstall haml
+yarn add jquery
+rails s
+gem install json -v '1.8.3' --source 'https://rubygems.org/
+gem install json -v '1.8.3'
+rails server
+`gem install json -v '1.8.3' --source 'https://rubygems.org/'
+gem install json -v '1.8.3' --source 'https://rubygems.org/'
+bundle install
+cd C:\Users\sistemas\laravel\homestead
+cd C:\Users\sistemas\laravel 
+vagrant up
+git commit "actualizacion de parametros en login y RegistrarUsuario"
+git -s commit "actualizacion de parametros en login y RegistrarUsuario"
+git -m commit "actualizacion de parametros en login y RegistrarUsuario"
+git commit -m "actualizacion de parametros en login y RegistrarUsuario"
+git commit -m "Trabajando los componentes Login y Registro de usuarios"
+git commit -m "se trabaja con componentes MenuDerecha"
+npm status
+:q
+git commit -m "Error en Products"
+git commit -m "Error en las variables"
+npm install --save react-images-upload
+npm instal uidd
+npm instal uuid
+npm install uuid
+cd "C:\Proyectocore\laravel 6" 
+compose require guzzlehttp/guzlee
+compose require guzzlehttp/guzzle
+.\vendor\bin\upgrade-carbon
+rmdir cms
+composer create-project laravel/laravel cms
+cd cms\
+ls 
+composer require guzzlehttp/guzzle
+composer require laravel/socialite
+git remote add origin https://github.com/frezeer/cms.git
+php artisan make:controller ConnectController
+php artisan app:cms Laravel
+php artisan app:name Laravel
+php artisan app:name cms
+php artisan --version 
+composer create-project --prefer-dist laravel/laravel blog "5.8.*"  
+composer create-project --prefer-dist laravel/laravel blog "5.6.*"  
+cd C:\laragon\www
+composer create-project --prefer-dist laravel/laravel blog "5.5.*"  
+git remote remove origin
+git remote add origin https://github.com/frezeer/app-inmobiliaria_real.git
+git logs
+git remote -v
+git config --global user.name "frezeer"
+git config --global user.email frezee13@hotmail.com
+git config --global color.ui true
+git config --global --list
+npm start
+cd C:\laragon\www 
+composer create-project --prefer-dist laravel/laravel app_shop "5.5.*"
+cd app
+cd app-shop
+php artisan make:controller TestController 
+php artisan make:auth
+git remote add origin https://github.com/frezeer/app_shop_news.git
+git commit -m "Cambios en plantillas Login"
+git commit -m "Cambios en plantillas Register"
+git commit -m "Se crean las tablas de Categorias y Productos"
+cd Users\
+cd sistemas\
+php artisan make:seeder UsersTableSeeder
+php artisan make:seeder ProductsTableSeeder
+php artisan make:factory ProductFactory
+git commit -m "Se crean los seeders de Poductos y Usuarios Factory"
+php artisan make:model ProductImage -m
+php artisan make:factory CategoryFactory
+php artisan make:factory ProductImageFactory
+git commit -m "Se polarizan las tablas productos categorias e imagenes con Faker"
+php migrate:refresh --seed
+git commit -m "se crae una nueva forma de poblar las tablas haciendo uso de un nuevo Script ProductsTableSeeder"
+php artisan make:controller ProductController
+git commit -m "se da de alta los templates de editar y la funcion de eliminar productos asi como el uso de SoftDeletes"
+cd C:\laragon\www\app_shop 
+git commit -m "Se modifica el Delete por un form para evitar hacks , se crean las validaciones para el formulario Registrar Productos y se crean mensajes en español para las validaciones"
+git commit -m "Se actualizan las validaciones en edit para validar el fromulario de Edicion"
+php artisan make:middleware AdminMiddleware
+php artisan make:controller ImageController
+git commit -m "Se Crea el boton de ver imagen de Producto y se muestran en panel de productos"
+git commit -m "Se Habilitan funciones como imgenes destacadas , se habilita la opcion de eliminar imagenes"
+php artisan make:model Cart -m 
+php artisan make:model CartDetail -m 
+php artisan make:controller ProductController 
+git commit -m "Se Habilita el index de la pagina se arreglan los estilos se dio en el enterior de alta cart y cartdetails se crea show.blade en products para ver los productos individualemente"
+php artisan make:Controller CartDetailController
+git commit -m "Se Habilita el formulario y button para agregar cantidades al carrito"
+git commit -m "Funcional la clase cartsdetails se solucionan los errores"
+php artisan make:Controller CartController
+gatsby
+gatsby develop
+cd .
+cd laragon\
+cd www\
+php artisan make:controller Admin\CategoryController
+php artisan make:model Category -m
+php artisan tinker
+php artisan make:model Product -m
+git remote add origin https://github.com/frezeer/victorias_shop.git
+git commit -m "Migraciones hechas y pagina de slug lista"
+php artisan make:controller API/CategoryController --api
+php route:list
+php atisan route:lists
+php atisan route:listclear
+git commit -m "se crea archivo de reemplazar en public se le da la interaccion con axios para consultar la Api  http://localhost:8000/api/category/hombre para saber si la categoria existe "
+git commit -m "se combina laravel mix se excluyen assets en la esctructura y se implementa laravel vue"
+gits status
+php atisan route:list
+CLEAR
+php artisan make:controller Admin/AdminController --resource
+php artisan make:controller Admin/AdminCategoryController --resource
+git commit -m "se implementa el adminlite se crean la edicion de categorias la actualizacion"
+git commit -m "se cambia la zona horaria"
+git commit -m "se crea la ruta para cancelar en routes web"
+git commit -m "se cree la sessio de cancelar y el button de cancelar en editar y crear"
+git commit -m "se siguen crea la vista show y se habilita para editar al mismo tiempo"
+git commit -m "se sigue editando admin lte para las categorias los bradcrum"
+git commit -m "se implemento el numero de categorias en la plantilla"
+git commit -m "se crean las carpetas para admin y tienda para los js dividiendo los scripts para separar la tienda de adminlte"
+php artisan make:controller Admin/AdminProductController -resource
+php artisan make:controller Admin/AdminProductController --resource
+git commit -m "se comienza a crear la creacion de productos se adapta la plantilla para esto"
+php artisan make:controller API/ProductController
+php artisan make:model Image -m 
+git commit -m "se actualiza y crea el modelo Image se relacionan los modelos"
+git commit -m "se arregla query para busqueda de productos"
+git commit -m "se hacen pruebas de api en web routes con images"
+git commit -m "se mplementan precios en creacion de productos"
+git commit -m "se implementa la vista de las imagenes se pone la clase rounded-circle y se implementa el ckeditor"
+git commit -m "secorrige una sintaxis en web"
+npm run dev watch
+npm run  watch
+git commit -m "se empieza a editar edit para editar productos"
+git diff 0a6f18b 3c10354
+git diff HEAD
+git diff HEAD~1
+git diff HEAD~2
+php artisan migrate:refresh
+git commit -m "se edita el template de edicion y trabaja un 80% sin errores"
+php artisan route:list
+git commit -m "se trabajo con elimiancion de imagenes en edicion de productos y se deja funcionado"
+git log --online | cat
+git log --online
+git log --oneline
+git log
+git commit -m "se modifica AdminProductController"
+php artisan route:List
+git commit -m "se actualiza AdminProductController para la edicion de producto"
+cd C:\Proyectocore\laravel 
+laravel new laravel7
+git clone https://github.com/webdevmatics/ecom.git
+cd ecom
+composer install
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_LOG_LEVEL=debug
+APP_URL=http://localhost
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+MAIL_DRIVER=smtp
+MAIL_HOST=mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+PUSHER_APP_ID=
+PUSHER_KEY=
+php artisan key:generate
+php artisan migrate
+npm install node-sass
+php artisan server
+php artisan --version
+php artisan db:seed --class=CategoriesTableSeeder.php
+1
+php artisan db:seed --class=UserTableSeeder
+composer dumpautoload
+composer dump-autoload
+php artisan db:seed
+composer require tcg/voyager
+php artisan migrate:fresh --seed
+php artisan voyager:install
+cd laragon\www\
+cd app_shop
+php artisan migrate:refresh --seed
+git clone https://frexzeer13@bitbucket.org/Juanantonbernal/laravelvue.git
+cd laravelvue\
+composer create-project --prefer-dist laravel/laravel laravel_vue "5.7.*"  
+cd laravel_vue\
+l
+npm install vue-template-compiler --save-dev
+git init
+git commit -m "first commit"
+git remote add origin https://github.com/frezeer/laravelvue.git
+git commit -m "second commit s trabajo con el menu sidebar con sus respectivos iconos"
+npm install vue-router
+git commit -m "third commit se trabaja router los enlaces en el menu"
+git commit -m "fourth commit se modifica modulo usuario"
+git commit -m "fourth commit se modifica modulo usuario faltaba hacer un npm install y luego npm run dev para que tomara el cambio"
+npm i element-ui -S
+git commit -m "fifth se agrega el componente select en plantilla usuario se instala element y se importa en app.js possteriormente se installa y se corre"
+git push -u origin master
+php artisan make:controller Administracion\Usercontroller 
 clear
+php artisan make:controller Administracion\Userscontroller 
+php artisan make:seed UsersTableSeeder
+php artisan serve
+npm run watch
+npm install
+npm run de
+npm run dev
+cd entvirt\
+cd Scripts\
+activate.bat 
+dir
+cd ..
+cd app\
+ls
+manage.py runserve
+manage.py runserver
+python manage.py runserver
 git status
 git add -A

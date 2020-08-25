@@ -1,0 +1,300 @@
+ruby -v					# para revisar la version de ruby rails
+
+npm install -g yarn  			# para instalar yarn
+
+node -v
+
+npm -v
+
+rails -v
+
+yarn -v
+
+para visual studio
+
+shift + ctrl + p  windows 
+
+shift + command + p mac ox		
+
+focus terminal
+
+gem install rails -v 6.0.0rc1           # instalar las gemas despues de darle con el instalador
+
+rails new blog       			# crear el proyecto con todos sus archivos
+	
+bundle install       			# para instalar dependencias
+
+bundle exec rails webpacker:install	# instala una dependencia de forma individual
+
+rails server         			# para levantar servidor   
+
+code -r .            			# abre visual code con la carpeta del proyecto
+
+rails generate controller Home index    # genera el controlador Home con su Action index
+
+yarn add bootstrap			# agrega los archivos de bootstrap
+
+yarn add jquery, popper.js              # agrega librerias requeridas (de esta manera me dio error pero en los videos asi es) 
+
+yarn add jquery 			# instala jquery solo asi lo pude instalar
+ 
+yarn add popper.js			# instala popper solo asi pude instalar
+
+./bin/webpack-dev-server		# pequeño script para ver webpack
+
+ruby .\bin\webpack-dev-server           # lanza el webpaker para generacion de estilos
+
+
+#manejar los modelos en ingles el sabe si lo pone en singular o plural
+
+rails generate model Article title:string status:integer 
+
+rails db:migrate 			# ejecuta todas las migraciones que no se han realizado
+
+rails db.rollback			# deshace la ultima migracion realizada
+
+rails generate controller Articles	# genera la controlador Article
+
+rails action_text:install		# instalacion de libreria un editor de texto trix control pagina web y un lugar para guardar el dato enriquecido
+ 
+rails db:migrate 			# para que ejecute las acciones del texto enriquecido
+
+rails console				# ejecuta una consola de raise
+
+Article.find(2)				# buscamos el articulo con id 2
+
+article = Article.find(2)		# creamos una variable	
+	
+article.title				#leemos titulo
+
+article.content				#leemos el contenido 
+
+rails routes				# nos muestra las rutas definidas en nuestro proyecto
+
+rails generate devise:install		# se instala la libreria devise para authenticacion de usuarios
+
+rails generate devise User		# se genera el modelo
+
+rails db:migrate			# se corre la migracion esto se hace al crear modelos
+
+rails server 				# se reinicia el serve si no da problemas
+
+rails generate devise:views 		# crea los archivos html en tu proyecto
+
+rails server 				# se reinicia el serve si no da problemas
+
+
+rails generate migration add_user_id_to_articles user_id:integer
+
+rails generate migration add_user_id_to_articles user:references
+
+
+rails console				# abre la consola de rails	
+
+Article.last				# me trae el ultimo articulo
+
+User.find(1)				# buscamo el usuario con id 1
+
+article = Article.last			# guardamos en variable el ultimo articulo
+
+article.user				# nos muestra el usuario que conside con user_id
+
+user = User.find(1)			# hacemos la inversa
+
+user.articles  				# nos trae todos los articulos que tiene este usuario 
+
+
+rails generate scaffold Category title color #los ultimos valores son campos de tabla cuando son string no hay necesidad de ponerles el atributo
+
+rails generate model HasCategory article:references category:references
+
+rails server
+
+----------------------------------------------------------------------------------------------------
+
+ir a GEMFILE
+
+# sirve para agregar authentication
+gem 'devise'
+
+despues 
+bundle install
+
+rails generate devise:install
+
+
+rails generate devise User
+----------------------------------------------------------------------------------------------------
+
+
+<%= link_to "Inicio", root_path %>
+----------------------------------------------------------------------------------------------------
+
+para los archivos  parciales
+
+se nombran anteponiendo un guion bajo  _form.html.erb
+
+y se mandan llamar 
+
+<%= render "Articles/form" %>
+
+ 
+----------------------------------------------------------------------------------------------------
+
+
+http://localhost:3000/articles/new
+http://localhost:3000/articles/2
+http://localhost:3000/articles/2/edit
+http://localhost:3000/articles/user/1 frezee13@hotmail.com
+
+
+
+frezee13@hotmail.com
+erika#$18
+
+patty@hotmail.com
+patty123
+
+----------------------------------------------------------------------------------------------------
+
+cuando hay un cambio en la libreria 
+
+hay que hacer lo siguiente 
+
+buscar package.json 
+
+ "bootstrap": "^5.0.0-alpha1",  << buscar el paquete a actualizar cambiar la version
+
+yarn install  <<< con esto actualizara ala version que le idiquemos
+
+----------------------------------------------------------------------------------------------------
+migrations 
+
+	cambia la estructura de la base de datos
+
+
+Models  cambian los datos
+	
+	insertar
+	eliminar 
+	modificar
+			>> datos
+	
+controllers 
+	
+----------------------------------------------------------------------------------------------------
+
+https://github.com/lewebsimple/feathers-vuejs/issues/4
+
+
+Just went through the same thing. Run "ruby .\bin\webpack-dev-server"
+
+You might have to also modify config\webpacker.yml and change "host: 0.0.0.0" to "host: 127.0.0.1"
+
+Problema de jquery
+
+npm install --save resolve-url-loader --dev
+
+npm i --save-dev bootstrap@next bootstrap-loader tether jquery
+
+---------------------------------------------------------------------------------------------------
+views / articles / new.html.erb
+ 
+<%= form_with(model: @article, local: true) do |form| %>
+    <div>
+        <%=form.label :title %>
+        <%=form.text_field :title %>
+    </div>
+    <div>
+    <%= form.submit %>
+    </div>   
+<%end%>
+---------------------------------------------------------------------------------------------------
+Rails.application.routes.draw do
+
+end
+------------------------------------------------------------------------------------------------------
+webpaker.yml
+
+ host: 127.0.0.1
+------------------------------------------------------------------------------------------------------
+en javascript /css /  styles.scss    #crear el archivo no lo crea el proyecto
+
+@import '~bootstrap/scss/bootstrap';
+
+------------------------------------------------------------------------------------------------------
+agregar esta linea en  layout / Aplication.html.erb  Este es el esqueleto de todas las vistas
+
+ <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+ Agregar antes de yield
+
+ <%= render "partials/nav" %>
+
+------------------------------------------------------------------------------------------------------
+Esta en views / partials / nav
+
+
+
+<nav class="nav bg-light">
+     <li class="nav-item">
+        <%= link_to "Inicio" ,    root_path,    class:"nav-link" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to "Articulos" , articles_path, class:"nav-link" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to "Escribir" , new_article_path, class:"nav-link" %>
+    </li>
+</nav>
+
+------------------------------------------------------------------------------------------------------
+en javascript / Aplication.js
+
+//require('bootstrap') 
+import 'bootstrap'
+import 'css/styles'
+------------------------------------------------------------------------------------------------------
+dentro de Articles controller
+
+    def new
+        @article = Article.new 
+        @article.title = 'Demo'
+    end
+    
+    def create
+       @article = Article.create(title: params[:article][:title])
+       render json: @article
+    end
+--------------------------------------------------------------------------------------------------------
+
+rails generate model Articles title:string status:integer
+[WARNING] The model name 'Articles' was recognized as a plural, using the singular 'Article' instead. Override with
+custom inflection rules for this noun before running the generator.
+      invoke  active_record
+      create    db/migrate/20200725205504_create_articles.rb
+      create    app/models/article.rb
+      invoke    test_unit
+      create      test/models/article_test.rb
+      create      test/fixtures/articles.yml
+
+-------------------------------------------------------------------------------------------------------------
+Modelo article
+
+class Article < ApplicationRecord
+    has_rich_text :content
+end
+
+ puts "\n\n\n #{@article.persisted?} \n\n\n"
+--------------------------------------------------------------------------------------------------------------
+
+
+<%= @articles.each do |article| %>
+    <div>
+           <%= article.id %>
+           <%= article.title %>
+    </div>
+<%end%>
+
+
+gem install haml-rails
