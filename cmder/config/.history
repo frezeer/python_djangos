@@ -152,7 +152,6 @@ git remote add origin https://github.com/frezeer/python_djangos.git
 C:\django\envirt\Scripts\activate.bat 
 C:\django\envirt\Scripts\activate.bat
 cd django\entvirt\Scripts
-cd django\
 git commit -m "Errores al correr el servidor no importa las librerias"
 git commit -m "Terminado configuracion de context video 29 y 30"
 git log --online --decorate --all --graph
@@ -175,7 +174,6 @@ git commit -m "Se hacen camnios importantes en login ya funciona y se habilita e
 git commit -m "Se hacen cambios para el useContext"
 git commit -m "video Hooks 45"
 cdir
-c:/django/entvirt/Scripts/activate.bat
 git remote add origin https://github.com/frezeer/app_django.git
 git commit -m "Archivos Reducer Actualizados hasta openMensaje"
 git remote add origin https://github.com/frezeer/app_shop.git
@@ -394,7 +392,6 @@ git config --global --list
 npm start
 cd C:\laragon\www 
 composer create-project --prefer-dist laravel/laravel app_shop "5.5.*"
-cd app
 cd app-shop
 php artisan make:controller TestController 
 php artisan make:auth
@@ -554,9 +551,7 @@ git commit -m "fourth commit se modifica modulo usuario"
 git commit -m "fourth commit se modifica modulo usuario faltaba hacer un npm install y luego npm run dev para que tomara el cambio"
 npm i element-ui -S
 git commit -m "fifth se agrega el componente select en plantilla usuario se instala element y se importa en app.js possteriormente se installa y se corre"
-git push -u origin master
 php artisan make:controller Administracion\Usercontroller 
-clear
 php artisan make:controller Administracion\Userscontroller 
 php artisan make:seed UsersTableSeeder
 php artisan serve
@@ -564,15 +559,22 @@ npm run watch
 npm install
 npm run de
 npm run dev
+manage.py runserve
+manage.py runserver
+git commit -m "se repara formualrio y inicio para que mande al login sin problemas tambien el inicio de session y el logout funcionan"
+git status
+git push -u origin master
+c:/django/entvirt/Scripts/activate.bat
+cd app
+dir
+cd django\
 cd entvirt\
 cd Scripts\
 activate.bat 
-dir
 cd ..
 cd app\
 ls
-manage.py runserve
-manage.py runserver
 python manage.py runserver
-git status
+python manage.py startapp inv
+clear
 git add -A
