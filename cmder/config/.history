@@ -134,7 +134,6 @@ psql -h localhost -U sergio -d db_djfull -W -p 5435
 psql
 manage.py dbshell
 git commit -m "commit se configuro la base de datos db_djfull"
-python manage.py migrate
 python manage.py sqlmigrate admin 0001_initial
 python manage.py showmigrations
 python manage.py sqlmigrate auth 0001_initial
@@ -189,7 +188,6 @@ git commit -m "correccion de rutas de base ya trabaja"
 git commit -m "correccion de rutas de static ya funciona"
 python manage.py createsuperuser
 cd django\entvirt\Scripts\
-python manage.py dbshell
 git commit -m "trabajando esta parte esta en login"
 git commit -m "login trabajando y con mensaes de error cap 50"
 virtual venv
@@ -562,8 +560,6 @@ npm run dev
 manage.py runserve
 manage.py runserver
 git commit -m "se repara formualrio y inicio para que mande al login sin problemas tambien el inicio de session y el logout funcionan"
-git status
-git push -u origin master
 c:/django/entvirt/Scripts/activate.bat
 cd app
 dir
@@ -574,7 +570,15 @@ activate.bat
 cd ..
 cd app\
 ls
-python manage.py runserver
 python manage.py startapp inv
 clear
+git commit -m "se crea con python manage.py startapp inv"
+git push -u origin master
+python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+python manage.py sqlmigrate inv 0001_initial
+python manage.py dbshell
+python manage.py  showmigrations
+git status
 git add -A

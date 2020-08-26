@@ -76,7 +76,7 @@ python dbshell
 
 db_djfull=# \dt
                                         Listado de base de datos
-  Nombre   |  Due±o   | Codificaci¾n |       Collate       |        Ctype        |      Privilegios
+  Nombre   |  Dueï¿½o   | Codificaciï¿½n |       Collate       |        Ctype        |      Privilegios
 -----------+----------+--------------+---------------------+---------------------+-----------------------
  db_djfull | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 |
  postgres  | postgres | WIN1252      | Spanish_Mexico.1252 | Spanish_Mexico.1252 |
@@ -89,7 +89,7 @@ db_djfull=# \dt
 
 db_djfull=# \dt
                   Listado de relaciones
- Esquema |           Nombre           | Tipo  |  Due±o
+ Esquema |           Nombre           | Tipo  |  Dueï¿½o
 ---------+----------------------------+-------+----------
  public  | auth_group                 | tabla | postgres
  public  | auth_group_permissions     | tabla | postgres
@@ -236,8 +236,6 @@ pip install package-name --upgrade --force-reinstall # para reinstalar paquetes
 
 pip uninstall package-name                 #desisntala paquetes
 
-
-
 pip list --outdated                        #listar paquetes desactualizados
 
 Actualizar un paquete desactualizado:
@@ -274,6 +272,25 @@ createdb.exe -h localhost -p 5435 -O postgres -U postgres -e db_djfull
 psql -h localhost -U postgres -d db_djfull -W -p 5435
 
 --------------------------------------------------------------------------------------------------------
+python manage.py startapp inv
+
+python manage.py makemigrations
+
+python manage.py showmigrations
+
+python manage.py sqlmigrate inv 0001_initial
+
+python manage.py migrate
+
+python manage.py dbshell
+
+\dt 
+
+select * from inv_categoria;
+
+
+
+
 
 
  
